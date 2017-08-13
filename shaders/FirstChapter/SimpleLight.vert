@@ -18,11 +18,16 @@ uniform vec3 lightColor;
 uniform vec3 lightPos;
 uniform vec3 viewPos;
 
+vec3[] test = {
+    vec3(0.0, 0., 0.),
+    vec3(1., 0., 0.),
+    vec3(0., 0., 1.)
+};
+
 void main()
 {
-    
     FragPos = vec3(model * vec4(aPos, 1.0));
     Normal = vec3(normalModel * vec4(aNormal, 1.0));
     TexCoords = aTexCoords;
-    gl_Position = projection * view * model * vec4(aPos, 1.);
+    gl_Position = projection * view * model * vec4(aPos, 1.);//projection * view * model * vec4(aPos, 1.);
 }       
