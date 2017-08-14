@@ -94,8 +94,8 @@ void main()
         float diff = max(dot(lightDir, normal), 0.0);
         // vec3 diffuseHdrColor = texture(texture_diffuse1, TexCoords).rgb;
         // vec3 diffuseMapped = diffuseHdrColor / (diffuseHdrColor + vec3(1.0));
-        vec3 distanceFactor = vec3(1.0);//vec3(1., 1., 1.) * exp(-length(lightPos - FragPos) * 2.0);//1. / (2. * length(lightPos - FragPos));
-        vec3 diffuse = diff * (vec3(1., 0., 0.)); //* material.diffuse * distanceFactor;
+        vec3 distanceFactor = vec3(1., 1., 1.) * exp(-length(lightPos - FragPos) * .5);//1. / (2. * length(lightPos - FragPos));
+        vec3 diffuse = diff * (vec3(1., 1., 1.)) * distanceFactor; //* material.diffuse * distanceFactor;
         // specular
         vec3 viewDir = normalize(viewPos - FragPos);
         vec3 halfwayDir = normalize(lightDir + viewDir);  

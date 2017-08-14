@@ -58,6 +58,9 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Utils.fs" />
+    <Compile Include="Shader.fs" />
+    <Compile Include="Mesh.fs" />
+    <Compile Include="Model.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
